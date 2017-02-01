@@ -1,0 +1,15 @@
+[Unit]
+Description=amazon-dash server
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/home/root/node/bin/node /home/root/amazon-dash/app.js
+WorkingDirectory=/home/root/amazon-dash
+KillMode=process
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
